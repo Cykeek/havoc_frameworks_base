@@ -341,4 +341,6 @@
     <!-- Whether to enable performance tuning in Gaming mode -->
     <bool name="config_enableGamingPerformanceTuning">false</bool>
 
+    <!-- Whether doze feature is enabled by default in settings -->
+    <bool name="config_dozeDefaultEnabled">false</bool>
 </resources>
