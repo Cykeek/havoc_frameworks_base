@@ -914,6 +914,7 @@ public final class PowerManagerService extends SystemService
     private static native void nativeSetPowerBoost(int boost, int durationMs);
     private static native boolean nativeSetPowerMode(int mode, boolean enabled);
     private static native void nativeSetFeature(int featureId, int data);
+    private static native int nativeGetFeature(int featureId);
     private static native boolean nativeForceSuspend();
 
     private boolean mHardwareKeysEnable = true;
@@ -6086,6 +6087,21 @@ public final class PowerManagerService extends SystemService
         @Override
         public boolean interceptPowerKeyDown(KeyEvent event) {
             return interceptPowerKeyDownInternal(event);
+        }
+
+        @Override
+        public boolean setPowerSaveMode(boolean mode) {
+            return setLowPowerModeInternal(mode);
+        }
+
+        @Override
+        public int getFeature(int featureId) {
+            return nativeGetFeature(featureId);
+        }
+
+        @Override
+        public void setFeature(int featureId, int data) {
+            nativeSetFeature(featureId, data);
         }
     }
 }
