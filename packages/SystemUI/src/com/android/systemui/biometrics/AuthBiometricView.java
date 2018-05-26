@@ -16,6 +16,8 @@
 
 package com.android.systemui.biometrics;
 
+import static android.view.WindowManagerPolicyConstants.NAV_BAR_MODE_GESTURAL;
+
 import static android.view.Gravity.CENTER;
 
 import static com.android.systemui.util.Utils.getFODHeight;
@@ -36,6 +38,8 @@ import android.hardware.biometrics.BiometricPrompt;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.UserHandle;
+import android.provider.Settings;
 import android.os.RemoteException;
 import android.text.TextUtils;
 import android.util.AttributeSet;
@@ -59,6 +63,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
 
+import com.android.internal.util.custom.fod.FodUtils;
 /**
  * Contains the Biometric views (title, subtitle, icon, buttons, etc) and its controllers.
  */
