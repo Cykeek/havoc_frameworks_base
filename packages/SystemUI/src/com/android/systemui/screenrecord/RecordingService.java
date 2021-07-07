@@ -220,7 +220,8 @@ public class RecordingService extends Service implements MediaRecorder.OnInfoLis
         return Service.START_STICKY;
     }
 
-    protected void doStartRecording(int audioSource, boolean showTaps, boolean showStopDot, boolean lowQuality, boolean longerDuration) {
+    protected void doStartRecording(int audioSource, boolean showTaps, boolean showStopDot,
+            boolean lowQuality, boolean longerDuration) {
         int mCurrentUserId = mUserContextTracker.getCurrentUserContext().getUserId();
         mAudioSource = ScreenRecordingAudioSource
                 .values()[audioSource];
