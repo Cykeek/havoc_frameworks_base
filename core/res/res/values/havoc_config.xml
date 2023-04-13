@@ -343,4 +343,8 @@
 
     <!-- Whether doze feature is enabled by default in settings -->
     <bool name="config_dozeDefaultEnabled">false</bool>
+
+    <!-- Enable face auth only when swiping security view -->
+    <bool name="config_faceAuthOnlyOnSecurityView">false</bool>
+
 </resources>
